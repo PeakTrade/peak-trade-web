@@ -77,6 +77,7 @@ const FieldInput = <FormattedValue = string,>(
           type={showPassword ? 'text' : type || 'text'}
           id={id}
           value={value ?? ''}
+          size={size}
           placeholder={placeholder ? String(placeholder) : ''}
           onChange={(e) => setValue(e.target.value)}
           onFocus={() => setIsTouched(false)}

@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect } from 'react';
 
 import {
   Avatar,
@@ -15,9 +15,9 @@ import {
   MenuList,
   Spinner,
 } from '@chakra-ui/react';
-import { LogIn, LogOut, User2, UserPlus2 } from 'lucide-react';
+import { LogOut, User2 } from 'lucide-react';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import { trpc } from '@/lib/trpc/client';
 

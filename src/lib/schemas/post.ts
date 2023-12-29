@@ -1,7 +1,5 @@
 import { z } from 'zod';
 
-import { zUser } from './user';
-
 export const zPostStatus = () =>
   z.enum(['PENDING', 'APPROVED', 'DENIED']).catch('PENDING');
 export const zPost = () =>

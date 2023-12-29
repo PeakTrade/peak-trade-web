@@ -3,9 +3,9 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
-const zNodeEnv = z
-  .enum(['development', 'test', 'production'])
-  .default('development');
+// const zNodeEnv = z
+//   .enum(['development', 'test', 'production'])
+//   .default('development');
 
 export const env = createEnv({
   server: {
