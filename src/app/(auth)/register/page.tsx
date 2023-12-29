@@ -1,11 +1,16 @@
 'use client';
 
-import { Center, Stack } from '@chakra-ui/react';
+import { Box, Center, Stack } from '@chakra-ui/react';
+import Image from 'next/image';
+
+import RegisterForm from './RegisterForm';
 
 const RegisterPage = () => {
   return (
-    <Center w="full" h="full">
-      <Stack w="sm">{/* TODO : RegisterForm */}</Stack>
+    <Center position="relative" w="full" h="full">
+      <Stack>
+        <RegisterForm />
+      </Stack>
     </Center>
   );
 };

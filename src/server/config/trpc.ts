@@ -1,8 +1,9 @@
-import { initTRPC } from '@trpc/server';
+import { inferAsyncReturnType, initTRPC } from '@trpc/server';
 import { FetchCreateContextFnOptions } from '@trpc/server/adapters/fetch';
 
-const t = initTRPC.context<typeof createTrpcContext>().create();
+import { db } from './db';
 
+const t = initTRPC.context<typeof createTrpcContext>().create();
 export const createTrpcRouter = t.router;
 
 export const createTrpcContext = async ({
@@ -10,7 +11,9 @@ export const createTrpcContext = async ({
 }: FetchCreateContextFnOptions) => {
   // TODO : Populate context
 
-  return { req };
+  return { req, db };
 };
 
-export type AppContext = Awaited<ReturnType<typeof createTrpcContext>>;
+export type AppContext = inferAsyncReturnType<typeof createTrpcContext>;
+
+export const publicProcedure = () => t.procedure;

@@ -34,6 +34,7 @@ const Navbar: FC<NavbarProps> = () => {
       borderColor="text-muted"
       boxShadow="layout"
       px={{ base: 2, md: 4 }}
+      zIndex={2}
     >
       <Box
         position="relative"
