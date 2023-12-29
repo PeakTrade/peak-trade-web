@@ -1,7 +1,6 @@
 'use client';
 
-import { Box, Center, Stack } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Center, Stack } from '@chakra-ui/react';
 
 import RegisterForm from './RegisterForm';
 

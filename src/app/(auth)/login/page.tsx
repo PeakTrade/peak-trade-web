@@ -1,5 +1,17 @@
+"use client"
+
+import { Center, Stack } from '@chakra-ui/react';
+
+import LoginForm from './LoginForm';
+
 const LogInPage = () => {
-  return <>This is the page for loggin in </>;
+  return (
+    <Center position="relative" w="full" h="full">
+      <Stack>
+        <LoginForm />
+      </Stack>
+    </Center>
+  );
 };
 
 export default LogInPage;

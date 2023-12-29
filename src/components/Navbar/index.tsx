@@ -2,28 +2,14 @@
 
 import { FC } from 'react';
 
-import {
-  Avatar,
-  Box,
-  Button,
-  HStack,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuGroup,
-  MenuItem,
-  MenuList,
-} from '@chakra-ui/react';
-import { LogIn, UserPlus2 } from 'lucide-react';
+import { Box, HStack } from '@chakra-ui/react';
 import Image from 'next/image';
-import Link from 'next/link';
+
+import AccountMenuNav from './AccountMenuNav';
 
 interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = () => {
-  const user = {
-    email: null,
-  };
   return (
     <HStack
       w="full"
@@ -47,36 +33,7 @@ const Navbar: FC<NavbarProps> = () => {
       </Box>
 
       <HStack align="center" h="full">
-        <Menu isLazy placement="bottom-end">
-          <MenuButton
-            as={Button}
-            variant="link"
-            aria-label="Account menu button"
-          >
-            <Avatar name={user.email ?? 'Guest'} size="md" />
-          </MenuButton>
-          <MenuList>
-            <MenuGroup title={user.email ?? 'Welcome guest'} mt={-0.15}>
-              <MenuDivider />
-              <MenuItem
-                as={Link}
-                href="/register"
-                icon={<UserPlus2 />}
-                color="text-dimmed"
-              >
-                Create account
-              </MenuItem>
-              <MenuItem
-                as={Link}
-                href="/login"
-                icon={<LogIn />}
-                color="text-dimmed"
-              >
-                Log in
-              </MenuItem>
-            </MenuGroup>
-          </MenuList>
-        </Menu>
+        <AccountMenuNav />
       </HStack>
     </HStack>
   );

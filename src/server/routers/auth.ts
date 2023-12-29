@@ -1,15 +1,32 @@
 import { TRPCError } from '@trpc/server';
 import { hash } from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { cookies } from 'next/headers';
+import { z } from 'zod';
 
-import { RegisterFormFields, zRegisterFormFields } from '@/lib/schemas/user';
+import { env } from '@/env.mjs';
+import {
+  zLoginFormFields,
+  zRegisterFormFields,
+  zUser,
+} from '@/lib/schemas/user';
 
+import { AUTH_COOKIE, isValidPassword } from '../config/auth';
 import { createTrpcRouter, publicProcedure } from '../config/trpc';
 
 export const authRouter = createTrpcRouter({
+  checkAuthenticated: publicProcedure()
+    .input(z.void())
+    .query(async ({ ctx }) => {
+      return {
+        isAuthenticated: !!ctx.user,
+      };
+    }),
+
   register: publicProcedure()
     .input(zRegisterFormFields)
     .mutation(async ({ ctx, input }) => {
-      const { email, password } = input;
+      const { name, email, password } = input;
 
       const isEmailTaken = await ctx.db.user.findFirst({ where: { email } });
 
@@ -24,6 +41,7 @@ export const authRouter = createTrpcRouter({
 
       const result = await ctx.db.user.create({
         data: {
+          name,
           email,
           password: hashedPassword,
         },
@@ -34,5 +52,47 @@ export const authRouter = createTrpcRouter({
         message: 'Account created successfully',
         result: result.email,
       };
+    }),
+
+  login: publicProcedure()
+    .input(zLoginFormFields)
+    .mutation(async ({ ctx, input }) => {
+      const { email, password } = input;
+      const user = await ctx.db.user.findUnique({
+        where: {
+          email,
+        },
+      });
+
+      if (!user)
+        throw new TRPCError({
+          code: 'BAD_REQUEST',
+          message: 'Invalid credentials',
+        });
+
+      if (!(await isValidPassword(password, user.password))) {
+        throw new TRPCError({
+          code: 'BAD_REQUEST',
+          message: 'Invalid password',
+        });
+      }
+
+      const authToken = jwt.sign({ id: user.id }, env.AUTH_SECRET);
+      cookies().set({
+        name: AUTH_COOKIE,
+        value: authToken,
+        httpOnly: true,
+      });
+
+      return {
+        authToken,
+      };
+    }),
+
+  logout: publicProcedure()
+    .input(z.void())
+    .mutation(async ({ ctx }) => {
+      ctx.user = null;
+      cookies().delete(AUTH_COOKIE);
     }),
 });

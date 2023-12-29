@@ -2,8 +2,7 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:sonarjs/recommended",
-    "next/core-web-vitals",
-    "plugin:storybook/recommended"
+    "next/core-web-vitals"
   ],
   "rules": {
     "react/no-unescaped-entities": "off",
@@ -25,11 +24,7 @@
       }
     },
     {
-      "files": [
-        "*.stories.tsx",
-        "./src/locales/**/*",
-        "./src/theme/components/**/*.ts"
-      ],
+      "files": ["./src/locales/**/*", "./src/theme/components/**/*.ts"],
       "rules": {
         "import/no-anonymous-default-export": "off"
       }

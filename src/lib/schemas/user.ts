@@ -4,7 +4,8 @@ import { zPost } from './post';
 
 export const zUser = () =>
   z.object({
-    name: z.string().min(1),
+    id: z.string(),
+    name: z.string(),
     email: z.string().email(),
     password: z.string().min(8),
     posts: z.array(zPost()),
