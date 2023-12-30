@@ -40,7 +40,7 @@ const AccountMenuNav: FC<AccountMenuNavProps> = () => {
   if (!account.data)
     return (
       <HStack>
-        <Button as={Link} href="login">
+        <Button as={Link} variant="@secondary" href="login">
           Connect
         </Button>
         <Button as={Link} href="register">

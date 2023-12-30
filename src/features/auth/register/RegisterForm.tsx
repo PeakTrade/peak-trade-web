@@ -1,11 +1,11 @@
-import { Box, Button, Stack } from '@chakra-ui/react';
+import { Button, Stack } from '@chakra-ui/react';
 import { Formiz, useForm } from '@formiz/core';
 import { isEmail, isMinLength, isNotEmptyString } from '@formiz/validations';
-import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { Check } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 import FieldInput from '@/components/FieldInput';
+import { Icon } from '@/components/Icon';
 import { useToastError, useToastSuccess } from '@/components/Toast';
 import { trpc } from '@/lib/trpc/client';
 import { RegisterFormFields } from '@/server/config/schemas/Users';
@@ -46,15 +46,6 @@ const RegisterForm = () => {
         width="lg"
         align="center"
       >
-        <Box
-          position="relative"
-          w={32}
-          h={32}
-          aspectRatio={1}
-          aria-label="image-container"
-        >
-          <Image src="/logo.png" alt="main logo" fill />
-        </Box>
         <FieldInput
           label="Name"
           name="name"
@@ -81,7 +72,6 @@ const RegisterForm = () => {
           isRequired
         />
         <FieldInput
-          size="lg"
           label="Password"
           name="password"
           type="password"
@@ -95,7 +85,7 @@ const RegisterForm = () => {
         />
         <Button
           type="submit"
-          rightIcon={<ArrowRight />}
+          leftIcon={<Icon icon={Check} />}
           variant="@primary"
           w="full"
           isLoading={isLoading}
