@@ -13,6 +13,7 @@ const createUsers = async () => {
     Array.from({ length: Math.max(0, 10 - existingCount) }, async () => {
       await prisma.user.create({
         data: {
+          name: faker.person.firstName(),
           email: faker.internet.email().toLowerCase(),
           password: await hash('random', 12),
         },
@@ -24,6 +25,7 @@ const createUsers = async () => {
   if (!(await prisma.user.findUnique({ where: { email: 'user@user.com' } }))) {
     await prisma.user.create({
       data: {
+        name: 'user',
         email: 'user@user.com',
         password: await hash('user', 12),
       },
@@ -35,6 +37,7 @@ const createUsers = async () => {
   ) {
     await prisma.user.create({
       data: {
+        name: 'admin',
         email: 'admin@admin.com',
         password: await hash('admin', 12),
       },
