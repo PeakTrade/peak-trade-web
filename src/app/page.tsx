@@ -1,5 +1,7 @@
-import { Flex } from '@chakra-ui/react';
+'use client';
+
+import PageHome from '@/features/home/PageHome';
 
 export default function Page() {
-  return <Flex h="full" w="full"></Flex>;
+  return <PageHome />;
 }
