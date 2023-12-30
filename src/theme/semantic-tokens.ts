@@ -6,11 +6,11 @@ export const semanticTokens = {
     },
     'text-muted': {
       default: 'gray.300',
-      _dark: 'gray.800',
+      _dark: 'gray.700',
     },
     'bg-default': {
-      default: 'gray.100',
-      _dark: 'gray.900',
+      default: 'gray.50',
+      _dark: 'gray.700',
     },
   },
 };

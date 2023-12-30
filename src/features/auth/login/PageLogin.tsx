@@ -1,9 +1,9 @@
-import { Box, Button, Center, Stack, Text } from '@chakra-ui/react';
+import { Button, Center, Stack, Text } from '@chakra-ui/react';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Icon } from '@/components/Icon';
+import Logo from '@/components/Logo';
 
 import LoginForm from './LoginForm';
 
@@ -11,20 +11,12 @@ const PageLogin = () => {
   return (
     <Center position="relative" w="full" h="full">
       <Stack alignItems="center">
-        <Box
-          position="relative"
-          w={32}
-          h={32}
-          aspectRatio={1}
-          aria-label="image-container"
-        >
-          <Image src="/logo.png" alt="main logo" fill />
-        </Box>
+        <Logo height={150} width={150} />
         <Text>
           Want to join the adventure ?{' '}
           <Button
             as={Link}
-            href="login"
+            href="register"
             variant="unstyled"
             rightIcon={<Icon icon={ArrowRight} />}
             fontWeight="bold"

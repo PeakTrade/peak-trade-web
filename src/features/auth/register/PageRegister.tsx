@@ -1,9 +1,9 @@
-import { Box, Button, Center, Stack, Text } from '@chakra-ui/react';
+import { Button, Center, Stack, Text } from '@chakra-ui/react';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import { Icon } from '@/components/Icon';
+import Logo from '@/components/Logo';
 
 import RegisterForm from './RegisterForm';
 
@@ -11,15 +11,8 @@ const PageRegister = () => {
   return (
     <Center position="relative" w="full" h="full">
       <Stack alignItems="center">
-        <Box
-          position="relative"
-          w={32}
-          h={32}
-          aspectRatio={1}
-          aria-label="image-container"
-        >
-          <Image src="/logo.png" alt="main logo" fill />
-        </Box>
+        <Logo height={150} width={150} />
+
         <Text>
           Already have an account ?{' '}
           <Button

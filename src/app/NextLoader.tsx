@@ -12,8 +12,8 @@ interface NextLoaderProps {
 }
 
 const NextLoader: FC<NextLoaderProps> = ({
-  lightColor = 'gray.900',
-  darkColor = 'gray.300',
+  lightColor = 'brand.900',
+  darkColor = 'brand.300',
   showSpinner = false,
 }) => {
   const loaderColorKey = useColorModeValue(lightColor, darkColor);

@@ -17,3 +17,6 @@ export const avatarFields = {
 export const zAccount = () => zUser().pick(accountFields);
 
 export type Account = z.infer<ReturnType<typeof zAccount>>;
+
+export const zAccountAvatar = () => zUser().pick(avatarFields);
+export type AccountAvatar = z.infer<ReturnType<typeof zAccountAvatar>>;

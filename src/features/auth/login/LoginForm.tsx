@@ -31,14 +31,7 @@ const LoginForm = () => {
   });
   return (
     <Formiz connect={form} autoForm>
-      <Stack
-        spacing={8}
-        p={4}
-        bg="white"
-        borderRadius="xl"
-        width="lg"
-        align="center"
-      >
+      <Stack spacing={8} width={{ base: 'sm', md: 'md' }} align="center">
         <FieldInput
           label="Email"
           name="email"

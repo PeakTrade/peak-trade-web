@@ -2,15 +2,17 @@ import { FC } from 'react';
 
 import { Stack, StackProps } from '@chakra-ui/react';
 
+import { NAVBAR_MOBILE_HEIGHT } from '@/theme';
+
 const PageContainer: FC<StackProps> = ({ children, ...props }) => {
   const { maxWidth, ...rest } = props;
   return (
     <Stack
       spacing={0}
-      mx="auto"
+      mx={{ base: 0, md: 'auto' }}
       w="full"
-      h="100vh"
-      px={{ base: 2.5, md: 20 }}
+      h={{ base: `${100 - NAVBAR_MOBILE_HEIGHT}vh`, md: '100vh' }}
+      px={{ base: 5, md: 20 }}
       maxWidth={maxWidth ?? '6xl'}
       {...rest}
     >

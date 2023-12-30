@@ -4,7 +4,6 @@ import { FC, PropsWithChildren } from 'react';
 
 import { ColorModeScript } from '@chakra-ui/react';
 
-import PageContainer from '@/components/PageContainer';
 import TrpcProvider from '@/lib/trpc/TrpcProvider';
 import theme, { COLOR_MODE_STORAGE_KEY } from '@/theme';
 
@@ -23,9 +22,7 @@ export const Document: FC<PropsWithChildren> = ({ children }) => {
           storageKey={COLOR_MODE_STORAGE_KEY}
         />
         <Providers>
-          <TrpcProvider>
-            <PageContainer>{children}</PageContainer>
-          </TrpcProvider>
+          <TrpcProvider>{children}</TrpcProvider>
         </Providers>
       </body>
     </html>
