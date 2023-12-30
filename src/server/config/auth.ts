@@ -4,9 +4,9 @@ import jwt from 'jsonwebtoken';
 import { cookies } from 'next/headers';
 
 import { env } from '@/env.mjs';
-import { accountFields, zAccount } from '@/lib/schemas/account';
 
 import { db } from './db';
+import { accountFields, zAccount } from './schemas/Account';
 
 export const AUTH_COOKIE = 'auth-token';
 

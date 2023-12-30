@@ -5,7 +5,10 @@ import { cookies } from 'next/headers';
 import { z } from 'zod';
 
 import { env } from '@/env.mjs';
-import { zLoginFormFields, zRegisterFormFields } from '@/lib/schemas/user';
+import {
+  zLoginFormFields,
+  zRegisterFormFields,
+} from '@/server/config/schemas/Users';
 
 import { AUTH_COOKIE, isValidPassword } from '../config/auth';
 import { createTrpcRouter, publicProcedure } from '../config/trpc';

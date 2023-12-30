@@ -8,8 +8,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 
 import FieldInput from '@/components/FieldInput';
 import { useToastError, useToastSuccess } from '@/components/Toast';
-import { LoginFormFields } from '@/lib/schemas/user';
 import { trpc } from '@/lib/trpc/client';
+import { LoginFormFields } from '@/server/config/schemas/Users';
 
 const LoginForm = () => {
   const toastError = useToastError();

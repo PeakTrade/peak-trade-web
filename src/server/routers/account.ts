@@ -1,7 +1,7 @@
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
 
-import { accountFields, avatarFields } from '@/lib/schemas/account';
+import { accountFields, avatarFields } from '@/server/config/schemas/Account';
 
 import {
   createTrpcRouter,

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { zPost } from './post';
+import { zPost } from './Posts';
 
 export const zUser = () =>
   z.object({

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { zUser } from '@/lib/schemas/user';
+import { zUser } from './Users';
 
 export const accountFields = {
   id: true,

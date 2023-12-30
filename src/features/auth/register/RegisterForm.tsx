@@ -7,8 +7,8 @@ import { useRouter } from 'next/navigation';
 
 import FieldInput from '@/components/FieldInput';
 import { useToastError, useToastSuccess } from '@/components/Toast';
-import { RegisterFormFields } from '@/lib/schemas/user';
 import { trpc } from '@/lib/trpc/client';
+import { RegisterFormFields } from '@/server/config/schemas/Users';
 
 const RegisterForm = () => {
   const toastSuccess = useToastSuccess();
