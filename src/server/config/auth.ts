@@ -1,7 +1,6 @@
-import { TRPCError } from '@trpc/server';
 import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 
 import { env } from '@/env.mjs';
 
@@ -11,7 +10,9 @@ import { accountFields, zAccount } from './schemas/Account';
 export const AUTH_COOKIE = 'auth-token';
 
 export const getServerSideUser = async () => {
-  const authToken = cookies().get(AUTH_COOKIE)?.value;
+  const authToken =
+    headers().get('Authorization')?.split('Bearer ')[1] ??
+    cookies().get(AUTH_COOKIE)?.value;
 
   if (!authToken) return null;
 
@@ -28,10 +29,7 @@ export const getServerSideUser = async () => {
   });
 
   if (!user) {
-    throw new TRPCError({
-      code: 'NOT_FOUND',
-      message: 'There was a problem during your authentication',
-    });
+    return;
   }
 
   return zAccount().parse(user);

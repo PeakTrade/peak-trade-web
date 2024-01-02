@@ -37,6 +37,7 @@ export const AccountMenuNav: FC<AccountMenuNavProps> = () => {
   if (account.isLoading) return <LoadingMenuNav showMobile={showMobile} />;
 
   if (!account.data) return <GuestMenuNav showMobile={showMobile} />;
+
   return <AuthenticatedMenuNav {...account.data} showMobile={showMobile} />;
 };
 

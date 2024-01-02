@@ -17,6 +17,8 @@ export const authRouter = createTrpcRouter({
   checkAuthenticated: publicProcedure()
     .input(z.void())
     .query(async ({ ctx }) => {
+      // // remove
+      // throw new TRPCError({ code: 'FORBIDDEN', message: ctx.user?.email });
       return {
         isAuthenticated: !!ctx.user,
       };

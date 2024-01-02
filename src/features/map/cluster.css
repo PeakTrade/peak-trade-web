@@ -1,0 +1,20 @@
+.marker-cluster-icon-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  max-width: 7rem;
+  transform: translate(-25%, -25%);
+}
+
+.marker-cluster-icon {
+  display: flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.marker-cluster-icon-back:hover {
+  background: rgba(0, 128, 0, 0.6);
+}
