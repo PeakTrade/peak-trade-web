@@ -21,12 +21,10 @@ export default function RootLayout({
   return (
     <Document>
       <NextLoader />
-      <PageContainer>
-        <Show above="md">
-          <NavbarDesktop />
-        </Show>
-        {children}
-      </PageContainer>
+      <Show above="md">
+        <NavbarDesktop />
+      </Show>
+      {children}
       <Show below="md">
         <NavbarMobile />
       </Show>

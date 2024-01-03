@@ -36,9 +36,14 @@ const MapContent = () => {
     base: true,
     md: false,
   });
-  const { data, refetch } = trpc.map.all.useQuery({
-    typeFilter: [],
-  });
+  const { data, refetch } = trpc.map.all.useQuery(
+    {
+      typeFilter: [],
+    },
+    {
+      staleTime: 0,
+    }
+  );
   const trpcUtils = trpc.useUtils();
 
   const onCloseComplete = () => {
@@ -118,6 +123,7 @@ const MapContent = () => {
         <Drawer
           isOpen={isOpen}
           onClose={onClose}
+          placement="left"
           size="md"
           onCloseComplete={onCloseComplete}
         >
