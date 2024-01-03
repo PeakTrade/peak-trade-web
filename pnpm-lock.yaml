@@ -41,6 +41,9 @@ dependencies:
   '@prisma/client':
     specifier: 5.7.1
     version: 5.7.1(prisma@5.7.1)
+  '@react-leaflet/core':
+    specifier: ^2.1.0
+    version: 2.1.0(leaflet@1.9.4)(react-dom@18.2.0)(react@18.2.0)
   '@t3-oss/env-nextjs':
     specifier: 0.7.1
     version: 0.7.1(typescript@5.3.3)(zod@3.22.4)

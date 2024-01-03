@@ -8,7 +8,7 @@ export type LocationProps = MarkerProps;
 const Location: FC<LocationProps> = ({ children, ...props }) => {
   const { position, id, icon, ...rest } = props;
   return (
-    <Marker position={position} icon={icon} {...rest} id={id}>
+    <Marker position={position} icon={icon} id={id} {...rest}>
       <Popup>{children}</Popup>
     </Marker>
   );

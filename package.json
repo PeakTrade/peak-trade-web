@@ -24,6 +24,7 @@
     "@formiz/core": "2.1.0",
     "@formiz/validations": "2.0.1",
     "@prisma/client": "5.7.1",
+    "@react-leaflet/core": "^2.1.0",
     "@t3-oss/env-nextjs": "0.7.1",
     "@tanstack/react-query": "4.36.1",
     "@trivago/prettier-plugin-sort-imports": "4.3.0",

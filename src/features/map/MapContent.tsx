@@ -1,4 +1,5 @@
 import {
+  Button,
   Drawer,
   DrawerCloseButton,
   DrawerContent,
@@ -20,6 +21,7 @@ import useOnMapClick from '@/hooks/useOnMapClick';
 import { trpc } from '@/lib/trpc/client';
 
 import LocationForm from './LocationForm';
+import LocationPopUp from './LocationPopUp';
 import { ICONS } from './config';
 
 const MapContent = () => {
@@ -62,6 +64,10 @@ const MapContent = () => {
 
     const tempMarker = marker(event.latlng, { icon: ICONS['DEFAULT'] });
     map.addLayer(tempMarker);
+    map.flyTo(event.latlng, Math.max(map.getZoom(), 15), {
+      animate: true,
+      duration: 1.5,
+    });
     onOpen();
 
     setCurrentLocation(tempMarker);
@@ -77,11 +83,20 @@ const MapContent = () => {
             key={`${item.id}`}
             position={[item.latitude, item.longitude]}
             icon={ICONS[item.type[0]]}
-            onClick={() => setCurrentLocation(item)}
+            clickHandler={() => {
+              setCurrentLocation(item);
+              map.flyTo(
+                [item.latitude, item.longitude],
+                Math.max(map.getZoom(), 15),
+                {
+                  animate: true,
+                  duration: 1,
+                }
+              );
+              console.log(item);
+            }}
           >
-            <Stack>
-              <Heading fontSize="md">{item.name}</Heading>
-            </Stack>
+            <LocationPopUp item={item} />
           </Location>
         );
       })}
