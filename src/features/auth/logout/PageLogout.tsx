@@ -4,6 +4,7 @@ import { Center, Heading, Spinner, Stack } from '@chakra-ui/react';
 import { useQueryClient } from '@tanstack/react-query';
 import { useRouter, useSearchParams } from 'next/navigation';
 
+import PageContainer from '@/components/PageContainer';
 import { trpc } from '@/lib/trpc/client';
 
 const PageLogout = () => {
@@ -35,12 +36,14 @@ const PageLogout = () => {
   ]);
 
   return (
-    <Center flex="1">
-      <Stack align="center" spacing={8}>
-        <Heading fontSize="md">Disconnecting...</Heading>
-        <Spinner size="lg" />
-      </Stack>
-    </Center>
+    <PageContainer>
+      <Center flex="1">
+        <Stack align="center" spacing={8}>
+          <Heading fontSize="md">Disconnecting...</Heading>
+          <Spinner size="lg" />
+        </Stack>
+      </Center>
+    </PageContainer>
   );
 };
 

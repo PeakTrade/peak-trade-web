@@ -5,6 +5,7 @@ import MarkerClusterGroup from 'react-leaflet-cluster';
 
 import DarkModeSwitch from '@/components/DarkModeSwitch';
 import MapBox from '@/components/MapBox';
+import PageContainer from '@/components/PageContainer';
 import '@/features/map/cluster.css';
 
 import ButtonControlGroup from './ButtonControlGroup';
@@ -15,7 +16,7 @@ const PageMap = () => {
   const isDark = useColorModeValue(false, true);
   const iconCreateFunction = iconWithColorModeFunction(isDark);
   return (
-    <>
+    <PageContainer maxWidth="full" px={0} mx={0}>
       <Box position="absolute" left={0}>
         <DarkModeSwitch />
       </Box>
@@ -24,7 +25,6 @@ const PageMap = () => {
         center={[48.8566, 2.3522]}
         zoom={13}
         height="full"
-        borderRadius="2%"
         zIndex={1}
         tileLayerProps={{
           attribution:
@@ -40,7 +40,7 @@ const PageMap = () => {
           <MapContent />
         </MarkerClusterGroup>
       </MapBox>
-    </>
+    </PageContainer>
   );
 };
 
