@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { HStack } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import Logo from '@/components/Logo';
+import Logo from '@/components/Icons/Logo';
 import { NAVBAR_DESKTOP_HEIGHT } from '@/theme';
 
 import AccountMenuNav from './AccountMenuNav';

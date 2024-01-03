@@ -39,7 +39,7 @@ export const accountRouter = createTrpcRouter({
 
       const account = await db.user.findUnique({
         where: {
-          id: ctxUser.id,
+          id: ctxUser?.id,
         },
         select: accountFields,
       });

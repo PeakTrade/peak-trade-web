@@ -14,7 +14,7 @@ const Logo: FC<LogoProps> = (props) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_22_30)">
+      <g clipPath="url(#clip0_22_30)">
         <path
           d="M376 317L305.5 172.5L213.5 302.5L175.5 261.5L33 484H446L376 317Z"
           fill="url(#paint0_linear_22_30)"
@@ -27,15 +27,15 @@ const Logo: FC<LogoProps> = (props) => {
           <path
             d="M16 496.5L179.394 255.371C180.173 254.22 181.861 254.196 182.673 255.324L219.5 306.5L264 237.5L307.693 169.751C308.078 169.154 308.946 169.138 309.353 169.72L438.5 354.5M196.5 505.5L334.684 307.669C335.081 307.1 335.922 307.099 336.321 307.666L472.5 501M308.5 22L638.5 495.5"
             stroke="url(#paint2_linear_22_30)"
-            stroke-width="30"
-            stroke-linecap="round"
+            strokeWidth="30"
+            strokeLinecap="round"
           />
         </g>
         <path
           d="M530.767 183.371C527.282 203.585 517.018 221.897 501.824 235.384L469.308 189.316C472.775 184.871 475.134 179.602 476.109 173.945C477.666 164.919 475.573 155.644 470.291 148.161C465.009 140.678 456.971 135.6 447.945 134.044C442.288 133.068 436.534 133.526 431.184 135.304L398.668 89.2364C416.465 79.4373 437.157 75.8999 457.371 79.3856C480.893 83.4419 501.84 96.6762 515.605 116.177C529.37 135.678 534.824 159.848 530.767 183.371Z"
           fill="#F5E127"
           stroke="#DEB318"
-          stroke-width="20"
+          strokeWidth="20"
         />
       </g>
       <defs>
@@ -46,9 +46,9 @@ const Logo: FC<LogoProps> = (props) => {
           width="660.503"
           height="521.503"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -82,8 +82,8 @@ const Logo: FC<LogoProps> = (props) => {
           y2="465.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0C6F2D" />
-          <stop offset="1" stop-color="#0A3318" />
+          <stop stopColor="#0C6F2D" />
+          <stop offset="1" stopColor="#0A3318" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_22_30"
@@ -93,8 +93,8 @@ const Logo: FC<LogoProps> = (props) => {
           y2="181"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#0C6F2D" />
-          <stop offset="1" stop-color="#26DA63" />
+          <stop stopColor="#0C6F2D" />
+          <stop offset="1" stopColor="#26DA63" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_22_30"
@@ -104,8 +104,8 @@ const Logo: FC<LogoProps> = (props) => {
           y2="176"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#41322B" />
-          <stop offset="1" stop-color="#BB927F" />
+          <stop stopColor="#41322B" />
+          <stop offset="1" stopColor="#BB927F" />
         </linearGradient>
         <clipPath id="clip0_22_30">
           <rect width="646" height="484" fill="white" />

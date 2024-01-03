@@ -13,14 +13,14 @@ import { RegisterFormFields } from '@/server/config/schemas/Users';
 const RegisterForm = () => {
   const toastSuccess = useToastSuccess();
   const toastError = useToastError();
-
+  const trpcUtils = trpc.useUtils();
   const router = useRouter();
   const { mutate: register, isLoading } = trpc.auth.register.useMutation({
     onSuccess: () => {
       toastSuccess({ title: 'Success', description: 'Account created' });
-      trpc
-        .useUtils()
-        .auth.checkAuthenticated.setData(undefined, { isAuthenticated: true });
+      trpcUtils.auth.checkAuthenticated.setData(undefined, {
+        isAuthenticated: true,
+      });
       router.push('/login');
     },
     onError: (error) => {
@@ -29,7 +29,11 @@ const RegisterForm = () => {
           title: 'CONFLICT',
           description: 'Email already taken',
         });
-      }
+      } else
+        toastError({
+          title: error.data?.code,
+          description: error.message,
+        });
     },
   });
 

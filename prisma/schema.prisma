@@ -23,11 +23,28 @@ model Post {
 }
 
 model User {
-  id    String   @id @default(auto()) @map("_id") @db.ObjectId
-  name  String
-  email String   @unique
-  password String
-  posts Post[]
+  id            String   @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  email         String   @unique
+  password      String
+  posts         Post[]
 
-  creationDate DateTime @default(now())
+  creationDate  DateTime @default(now())
+}
+
+enum LocationType {
+  BOULDER
+  TRAD
+  INDOOR
+  OUTDOOR
+}
+
+model Location {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  name          String
+  type          LocationType[]
+  latitude      Float
+  longitude     Float
+  creationDate  DateTime @default(now())
+  isVerified    Boolean @default(false)
 }
