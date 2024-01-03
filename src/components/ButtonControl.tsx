@@ -1,5 +1,5 @@
 import { useColorModeValue } from '@chakra-ui/react';
-import { Mountain } from 'lucide-react';
+import { LocateFixed } from 'lucide-react';
 
 import { LeafletButtonControl } from '@/lib/react-leaflet/LeafletButtonControl';
 
@@ -9,7 +9,7 @@ export const ButtonControl = ({ handler }: { handler: () => void }) => {
   return (
     <LeafletButtonControl
       position="topright"
-      content={<Mountain />}
+      content={<LocateFixed height={28} width={28} />}
       handler={handler}
       isDark={isDark}
     />

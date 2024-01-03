@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
 
-import { LeafletMouseEvent, Map } from 'leaflet';
+import { LeafletMouseEvent } from 'leaflet';
+import { useMap } from 'react-leaflet';
 
-const useOnMapClick = (
-  map: Map,
-  handler: (event: LeafletMouseEvent) => void
-) => {
+const useOnMapClick = (handler: (event: LeafletMouseEvent) => void) => {
+  const map = useMap();
   useEffect(() => {
     map.addEventListener('click', handler);
     return () => {

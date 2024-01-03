@@ -7,7 +7,7 @@ import DarkModeSwitch from '@/components/DarkModeSwitch';
 import MapBox from '@/components/MapBox';
 import '@/features/map/cluster.css';
 
-import ButtonsControl from './ButtonsControl';
+import ButtonControlGroup from './ButtonControlGroup';
 import MapContent from './MapContent';
 import { iconWithColorModeFunction } from './config';
 
@@ -32,7 +32,7 @@ const PageMap = () => {
           url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         }}
       >
-        <ButtonsControl />
+        <ButtonControlGroup />
         <MarkerClusterGroup
           chunkedLoading
           iconCreateFunction={iconCreateFunction}

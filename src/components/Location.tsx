@@ -9,7 +9,7 @@ const Location: FC<LocationProps> = ({ children, ...props }) => {
   const { position, id, icon, ...rest } = props;
   return (
     <Marker position={position} icon={icon} id={id} {...rest}>
-      <Popup>{children}</Popup>
+      <Popup autoClose={true}>{children}</Popup>
     </Marker>
   );
 };

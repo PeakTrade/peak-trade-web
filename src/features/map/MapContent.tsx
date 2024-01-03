@@ -70,7 +70,7 @@ const MapContent = () => {
     setCurrentLocation(tempMarker);
   };
 
-  useOnMapClick(map, onMapClick);
+  useOnMapClick(onMapClick);
 
   return (
     <>
