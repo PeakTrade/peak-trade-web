@@ -1,12 +1,9 @@
 import {
-  Button,
   Drawer,
   DrawerCloseButton,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
-  Heading,
-  Stack,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { LeafletMouseEvent, marker } from 'leaflet';

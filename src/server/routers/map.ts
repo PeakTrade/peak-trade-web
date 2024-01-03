@@ -2,11 +2,7 @@ import { Prisma } from '@prisma/client';
 import { TRPCError } from '@trpc/server';
 import { z } from 'zod';
 
-import {
-  zLocation,
-  zLocationFormFields,
-  zLocationType,
-} from '../config/schemas/Map';
+import { zLocationFormFields, zLocationType } from '../config/schemas/Map';
 import {
   createTrpcRouter,
   protectedProcedure,
