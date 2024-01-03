@@ -7,12 +7,12 @@ interface GoogleMapsProps extends LucideProps {}
 export const GoogleMaps: FC<GoogleMapsProps> = (props) => {
   return (
     <svg
-      clip-rule="evenodd"
-      fill-rule="evenodd"
+      clipRule="evenodd"
+      fillRule="evenodd"
       height="2500"
-      image-rendering="optimizeQuality"
-      shape-rendering="geometricPrecision"
-      text-rendering="geometricPrecision"
+      imageRendering="optimizeQuality"
+      shapeRendering="geometricPrecision"
+      textRendering="geometricPrecision"
       viewBox="-584.5248496097993 0 9625.3248496098 12857.64"
       width="1774"
       xmlns="http://www.w3.org/2000/svg"
