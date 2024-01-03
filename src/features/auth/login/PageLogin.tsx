@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 import { Icon } from '@/components/Icon';
-import Logo from '@/components/Logo';
+import Logo from '@/components/Icons/Logo';
 
 import LoginForm from './LoginForm';
 
